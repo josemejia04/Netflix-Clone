@@ -18,9 +18,9 @@ export function AuthContextProvider({ children }) {
   //sign up function with firebase authentication
   function signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password);
-    setDoc(doc(db, "users", email), {
-      savedShows: [],
-    });
+    // setDoc(doc(db, "users", email), {
+    //   savedShows: [],
+    // });
   }
   //login function with firebase authentication
   function logIn(email, password) {
