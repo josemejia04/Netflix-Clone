@@ -16,7 +16,7 @@ const Main = () => {
   useEffect(() => {
     //You use axios.get(url) with a URL from an API endpoint to get a promise which returns a response object
     axios.get(requests.requestPopular).then((response) => {
-      //inside the response object, there is data that is then assigned the value of movies
+      //inside the response object, there is data that is then assigned the state in movies
       setMovies(response.data.results);
     });
     //[] is a dependency to only load once
@@ -27,7 +27,7 @@ const Main = () => {
 
   //truncate function to return new string value with ellipse after length parameter indicated
   const truncateString = (str, num) => {
-    if (str.length > num) {
+    if (str?.length > num) {
       return str.slice(0, num) + "...";
     } else {
       return str;
