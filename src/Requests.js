@@ -1,5 +1,5 @@
 //API Key
-const key = "";
+const key = "afd90f966e91477a843f4b2f60fba5db";
 
 //endpoints
 const requests = {
