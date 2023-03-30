@@ -47,7 +47,7 @@ export function AuthContextProvider({ children }) {
     </AuthContext.Provider>
   );
 }
-
+// lets you read and subscribe to context from your component
 export function UserAuth() {
   return useContext(AuthContext);
 }
