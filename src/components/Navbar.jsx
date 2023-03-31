@@ -9,7 +9,7 @@ const Navbar = () => {
   //variable for react router navigation function
   const navigate = useNavigate();
 
-  console.log(user);
+  // console.log(user);
   // console.log(user.email);
 
   //async event handler arrow function to return a promise
