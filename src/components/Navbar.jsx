@@ -1,7 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
+import avatar from "../images/Netflix-avatar.png";
 
 const Navbar = () => {
+  //context object to set the user state
+  const { user, logOut } = UserAuth();
+  //variable for react router navigation function
+  const navigate = useNavigate();
+
+  console.log(user);
+  // console.log(user.email);
+
+  //async event handler arrow function to return a promise
+  const handleLogout = async () => {
+    //attempt code block
+    try {
+      //await to pause the execution and wait for logout promise to be resolved before it continues
+      await logOut();
+      //navigate to home page after promise is resolved
+      navigate("/");
+      //handle any error
+    } catch (error) {
+      //console log error if any
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
       <Link to="/">
@@ -9,16 +34,33 @@ const Navbar = () => {
           NETFLIX
         </h1>
       </Link>
-      <div>
-        <Link to="/login">
-          <button className="text-white pr-4">Sign In</button>
-        </Link>
-        <Link to="/signup">
-          <button className="bg-red-600 px-6 py-2 rounded cursor-pointer">
-            Sign Up
+      {/* ternary links to show avatar if account is signed in, else show login/signup */}
+      {user?.email ? (
+        <div className="flex flex-row justify-between">
+          <Link to="/account">
+            <button className="text-white pr-4">
+              <img className="w-[60px] h-[60px]" src={avatar} alt="Account" />
+            </button>
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="bg-red-600 px-6 py-2 h-[50%] rounded cursor-pointer text-white"
+          >
+            Logout
           </button>
-        </Link>
-      </div>
+        </div>
+      ) : (
+        <div>
+          <Link to="/login">
+            <button className="text-white pr-4">Sign In</button>
+          </Link>
+          <Link to="/signup">
+            <button className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white">
+              Sign Up
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

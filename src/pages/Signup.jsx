@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import background from "../images/netflix-background.jpg";
 import { UserAuth } from "../context/AuthContext";
 
@@ -10,7 +10,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   //creates context object to set the user state
   const { user, signUp } = UserAuth();
-//variable for react router navigation function
+  //variable for react router navigation function
   const navigate = useNavigate();
 
   //async event handler arrow function to return a promise
@@ -44,18 +44,21 @@ const Signup = () => {
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold text-center">Sign Up</h1>
               {/* input form with event handler to execute on submit */}
-              <form onSubmit={handleSubmit} className="w-full flex flex-col py-4">
+              <form
+                onSubmit={handleSubmit}
+                className="w-full flex flex-col py-4"
+              >
                 <input
-                //sets text value to state
-                 onChange={(e) => setEmail(e.target.value)}
+                  //sets text value to state
+                  onChange={(e) => setEmail(e.target.value)}
                   className="p-3 my-2 bg-gray-700 rounded"
                   type="email"
                   placeholder="Email"
                   autoComplete="email"
                 />
                 <input
-                //sets text value to state
-                 onChange={(e) => setPassword(e.target.value)}
+                  //sets text value to state
+                  onChange={(e) => setPassword(e.target.value)}
                   className="p-3 my-2 bg-gray-700 rounded"
                   type="password"
                   placeholder="Password"
