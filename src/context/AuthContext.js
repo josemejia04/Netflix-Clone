@@ -1,11 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import { setDoc, doc } from "firebase/firestore";
 
 //variable to create context objects allowing any component to access the data without needing to pass props manually
 const AuthContext = createContext();
@@ -18,9 +19,11 @@ export function AuthContextProvider({ children }) {
   //sign up function with firebase authentication
   function signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password);
-    // setDoc(doc(db, "users", email), {
-    //   savedShows: [],
-    // });
+    // create users document with email in firestore database
+    setDoc(doc(db, "users", email), {
+      //create empty array for user in firestore database
+      savedShows: [],
+    });
   }
   //login function with firebase authentication
   function logIn(email, password) {
