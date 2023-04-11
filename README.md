@@ -18,3 +18,7 @@ To run the app locally, follow these steps:
 6. In the TMDB API, create an account and get an API key.
 7. Create a new file in the src directory called apiConfig.js and export the API key as a variable.
 8. Start the app by running npm start.
+
+Webiste demo: https://netflix-react-b4f0f.web.app/
+
+Credit to Code Commerce for the tutorial
