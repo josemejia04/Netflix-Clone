@@ -11,7 +11,7 @@ const Login = () => {
   //set error state to empty string
   const [error, setError] = useState("");
   //creates context object to set the user state
-  const { user, logIn } = UserAuth();
+  const { logIn } = UserAuth();
   //variable for react router navigation function
   const navigate = useNavigate();
 
