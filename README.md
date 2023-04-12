@@ -1,12 +1,12 @@
 Welcome to the Netflix clone app built with React, Tailwind CSS, Firebase, and Axios!
 
-This app is a clone of the popular streaming platform Netflix, and it allows users to browse through a selection of movies/TV shows and save titles to their list of favorites.
+This app is a clone of the popular streaming platform Netflix, and it allows users to browse through a selection of movies/TV shows, watch trailers and save titles to their list of favorites.
 
 To build the user interface, I used the React library, which enables you to create reusable components and update the interface dynamically as users interact with the app. I also used Tailwind CSS to style the components quickly and efficiently, making it easy to customize the look and feel of the app.
 
 To handle authentication and data storage, I integrated Firebase, which provides a secure and scalable backend solution. I used Firebase Authentication to authenticate users and Firebase Firestore to store data such as user information and movie data.
 
-To fetch data from a third-party API, I utilized the Axios library. I made requests to the TMDB API to retrieve movie and TV show information, including titles, descriptions, and release dates.
+To fetch data from a third-party API, I utilized the Axios library. I made requests to the TMDB API to retrieve movie and TV show information, including titles, descriptions, and release dates. React-youtube is a React component for playing YouTube videos, and used to embed trailers. Movie-trailer is a Node.js module for getting the YouTube trailer URL for a given movie, and used to fetch the trailers for movies/TV shows.
 
 To run the app locally, follow these steps:
 
